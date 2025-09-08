@@ -8,11 +8,29 @@
 <body>
     <h1>Krokkodille Spillet</h1>
     <img src="krokodille.jfif">
-    <P>Poeng: 0</P>
 
-    <p></p>
-    <input>
-    <p></p>
-    
+    <P id="PointsCollected">Poeng: 0</P>
+
+    <p id="firstNumber"></p>
+    <input id="check">
+    <p id="firstNumber2"></p>
+
+    <button onclick="">submit</button>
+    <button onclick="randomFirst()">reset</button>
+
+    <script>
+
+        let numbers = 0;
+
+        function randomFirst() {
+            
+            let rng = Math.floor(Math.random() * 10) + 1;
+            let rng2 = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('firstNumber').innerHTML = ` ${rng}`;
+            document.getElementById('firstNumber2').innerHTML = ` ${rng2}`;
+        }
+
+
+    </script>
 </body>
 </html>
