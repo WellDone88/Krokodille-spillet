@@ -12,7 +12,7 @@
     <P id="PointsCollected">Poeng: 0</P>
 
     <p id="firstNumber"></p>
-    <input id="check" onchange="takeCareOfSymbol()">
+    <input id="check">
     <p id="firstNumber2"></p>
 
     <button onclick="checkAndGivePoints()">submit</button>
@@ -40,7 +40,7 @@
         
 
         function checkAndGivePoints() {
-            const userInput = document.getElementById('check').value;
+            let userInput = document.getElementById('check').value;
 
        }
 
