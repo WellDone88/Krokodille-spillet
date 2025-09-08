@@ -43,7 +43,10 @@
             let userInput = document.getElementById('check').value;
             if(rng > rng2 || rng2 < rng) {
                 points++
-                document.getElementById(PointColeected).innerHTML = `Poeng ${points}`
+                document.getElementById('PointsCollected').innerHTML = `Poeng: ${points}`
+            }
+            else {
+                points--;
             }
 
 
