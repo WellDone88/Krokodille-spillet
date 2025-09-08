@@ -12,15 +12,22 @@
     <P id="PointsCollected">Poeng: 0</P>
 
     <p id="firstNumber"></p>
-    <input id="check">
+    <input id="check" onchange="takeCareOfSymbol()">
     <p id="firstNumber2"></p>
 
-    <button onclick="">submit</button>
+    <button onclick="checkAndGivePoints()">submit</button>
     <button onclick="randomFirst()">reset</button>
+
+    <!-- Når man trykker submit - må man sjekke at man har 
+     skrevet inn riktig tegn i input-feltet og oppdatere 
+     poengsummen. Riktig svar plusser på 1 
+     poeng, feil svar trekker fra et poeng. -->
 
     <script>
 
-        let numbers = 0;
+        let points = 0;
+        let rng = 0;
+        let rng2 = 0;
 
         function randomFirst() {
             
@@ -29,6 +36,13 @@
             document.getElementById('firstNumber').innerHTML = ` ${rng}`;
             document.getElementById('firstNumber2').innerHTML = ` ${rng2}`;
         }
+
+        
+
+        function checkAndGivePoints() {
+            const userInput = document.getElementById('check').value;
+
+       }
 
 
     </script>
