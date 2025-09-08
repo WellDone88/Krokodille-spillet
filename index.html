@@ -41,6 +41,11 @@
 
         function checkAndGivePoints() {
             let userInput = document.getElementById('check').value;
+            if(rng > rng2 || rng2 < rng) {
+                points++
+                document.getElementById(PointColeected).innerHTML = `Poeng ${points}`
+            }
+
 
        }
 
