@@ -12,7 +12,7 @@
     <P id="PointsCollected">Poeng: 0</P>
 
     <p id="firstNumber"></p>
-    <input id="check">
+    <input id="check" placeholder="svar med <, > eller =">
     <p id="firstNumber2"></p>
 
     <button onclick="checkAndGivePoints()">submit</button>
@@ -41,14 +41,16 @@
 
         function checkAndGivePoints() {
             let userInput = document.getElementById('check').value;
-            if(rng > rng2 || rng2 < rng) {
+
+            if((userInput ===  ">" && rng > rng2) ||
+                (userInput === "<" && rng < rng2) ||
+                (userInput === "=" && rng === rng2)) {
                 points++
-                document.getElementById('PointsCollected').innerHTML = `Poeng: ${points}`
             }
             else {
                 points--;
             }
-
+            document.getElementById('PointsCollected').innerHTML = `Poeng: ${points}`
 
        }
 
