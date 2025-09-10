@@ -6,53 +6,66 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Krokkodille Spillet</h1>
-    <img src="krokodille.jfif">
+    <div id="app"></div>
 
-    <P id="PointsCollected">Poeng: 0</P>
-
-    <p id="firstNumber"></p>
-    <input id="check" placeholder="svar med <, > eller =">
-    <p id="firstNumber2"></p>
-
-    <button onclick="checkAndGivePoints()">submit</button>
-    <button onclick="randomFirst()">reset</button>
-
-    <!-- Når man trykker submit - må man sjekke at man har 
-     skrevet inn riktig tegn i input-feltet og oppdatere 
-     poengsummen. Riktig svar plusser på 1 
-     poeng, feil svar trekker fra et poeng. -->
 
     <script>
-
         let points = 0;
-        let rng = 0;
+        let rng1 = 0;
         let rng2 = 0;
+        
+        drawView()
 
-        function randomFirst() {
+        function drawView() {
             
-            rng = Math.floor(Math.random() * 10) + 1;
-            rng2 = Math.floor(Math.random() * 10) + 1;
-            document.getElementById('firstNumber').innerHTML = ` ${rng}`;
-            document.getElementById('firstNumber2').innerHTML = ` ${rng2}`;
-        }
+        document.getElementById('app').innerHTML = /*HTML*/`
+        
+        <h1>Krokodille spillet</h1>
+        <h2 id="PointsGot">Poeng: 0</h2>
 
+        <img src="krok Gap.jfif">
+
+        <p id="firstNR"></p>
+        <input id="inputText" placeholder="<,> eller = her">
+        <p id="secondNR"></p>
+
+        <button onclick="checkAndGivePoints()">Submit</button>
+        <button onclick="giveRNG()">Reset</button> 
+        `}
+
+    
         
 
-        function checkAndGivePoints() {
-            let userInput = document.getElementById('check').value;
+        function giveRNG(){
+            rng1 = Math.floor(Math.random() * 10) + 1;
+            rng2 = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('firstNR').innerHTML = rng1;
+            document.getElementById('secondNR').innerHTML = rng2;
 
-            if((userInput ===  ">" && rng > rng2) ||
-                (userInput === "<" && rng < rng2) ||
-                (userInput === "=" && rng === rng2)) {
-                points++
             }
+
+        function checkAndGivePoints() {
+            let userText = document.getElementById('inputText').value;
+
+            if(userText === ">" && rng1 > rng2) {
+                points++;
+            } else if (userText ==="<" && rng1 < rng2) {
+                points++;
+            }
+            else if (userText === "=" && rng1 === rng2) {
+                points++;
+            }
+                
             else {
                 points--;
             }
-            document.getElementById('PointsCollected').innerHTML = `Poeng: ${points}`
+            document.getElementById('PointsGot').innerHTML = `Poeng: ${points}`;
 
-       }
+
+            }
+
+        drawView()
+
 
 
     </script>
