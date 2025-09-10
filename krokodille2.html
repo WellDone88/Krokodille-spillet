@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+
+    <script>
+        let points = 0;
+        let rng1 = 0;
+        let rng2 = 0;
+        
+        drawView()
+
+        function drawView() {
+            
+        document.getElementById('app').innerHTML = /*HTML*/`
+        
+        <h1>Krokodille spillet</h1>
+        <h2 id="PointsGot">Poeng: 0</h2>
+
+        <img src="krok Gap.jfif">
+
+        <p id="firstNR"></p>
+        <input id="inputText" placeholder="<,> eller = her">
+        <p id="secondNR"></p>
+
+        <button onclick="checkAndGivePoints()">Submit</button>
+        <button onclick="giveRNG()">Reset</button> 
+        `}
+
+    
+        
+
+        function giveRNG(){
+            rng1 = Math.floor(Math.random() * 10) + 1;
+            rng2 = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('firstNR').innerHTML = rng1;
+            document.getElementById('secondNR').innerHTML = rng2;
+
+            }
+
+        function checkAndGivePoints() {
+            let userText = document.getElementById('inputText').value;
+
+            if(userText === ">" && rng1 > rng2) {
+                points++;
+            } else if (userText ==="<" && rng1 < rng2) {
+                points++;
+            }
+            else if (userText === "=" && rng1 === rng2) {
+                points++;
+            }
+                
+            else {
+                points--;
+            }
+            document.getElementById('PointsGot').innerHTML = `Poeng: ${points}`;
+
+
+            }
+
+        drawView()
+
+
+
+    </script>
+</body>
+</html>

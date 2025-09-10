@@ -3,14 +3,16 @@ Når du trykker reset-knappen genereres to random tall mellom 1-10
 Mellom tallene, må du ha et input felt. Her er det meningen at man 
 skal sammenligne tallene og skrive riktig operator!
 
-Når man trykker submit - må man sjekke at man har skrevet inn riktig tegn i input-feltet og oppdatere poengsummen. 
+Når man trykker submit - må man sjekke at man har skrevet inn riktig 
+tegn i input-feltet og oppdatere poengsummen. 
 Riktig svar plusser på 1 poeng, feil svar trekker fra et poeng.
 
 Bruk variabler, onclick, if/else og random for å løse oppgaven! ;) Lykke til!
 
 Ex:
 
-Dersom det første tallet er større enn det andre, må man skrive inn ">" for å få riktig svar, dersom det 
+Dersom det første tallet er større enn det andre, 
+må man skrive inn ">" for å få riktig svar, dersom det 
 første tallet er mindre enn må man skrive "<" og dersom tallene er like bruker man "="
 
 1 (inputfelt) 7 (submit btn) points: 0
